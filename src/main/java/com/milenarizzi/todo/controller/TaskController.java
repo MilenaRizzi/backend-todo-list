@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,7 +37,14 @@ public class TaskController {
     taskService.createTask(task);
     return ResponseEntity.created(URI.create(task.getId().toString())).body(task);
   }
-   
+
+  @PutMapping("{id}")
+  public ResponseEntity<Task> atualizar(@PathVariable Integer id, @RequestBody Task task) {
+    task.setId(id);
+    taskService.atualizar(task);
+    return ResponseEntity.ok().body(task);
+  }
+
   @DeleteMapping("{id}")
   public ResponseEntity<?> excluir(@PathVariable Integer id) {
     taskService.deleteTask(id);
