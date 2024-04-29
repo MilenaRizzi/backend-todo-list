@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.milenarizzi.todo.exception.RegistroNaoExistenteException;
+import com.milenarizzi.todo.exception.RecordNotFoundException;
 import com.milenarizzi.todo.model.Task;
 import com.milenarizzi.todo.repository.TaskRepository;
 
@@ -29,11 +29,11 @@ public class TaskService {
     // throw new RegistroNaoExistenteException();
     // }
     // return taskOpt.get();
-    return taskRepository.findById(id).orElseThrow(() -> new RegistroNaoExistenteException());
+    return taskRepository.findById(id).orElseThrow(() -> new RecordNotFoundException());
 
   }
 
-  public Task atualizar(Task datas){
+  public Task updateTask(Task datas){
     var task = this.consult(datas.getId());
     task.setCompleted(!task.isCompleted()); 
     return taskRepository.save(task); 
@@ -42,7 +42,7 @@ public class TaskService {
   public void deleteTask(Integer id) {
     boolean exist = taskRepository.existsById(id);
     if (!exist) {
-      throw new RegistroNaoExistenteException();
+      throw new RecordNotFoundException();
     }
     taskRepository.deleteById(id);
   }
