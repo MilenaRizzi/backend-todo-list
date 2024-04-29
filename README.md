@@ -32,6 +32,7 @@ $ Entre no arquivo da classe `TodoApllication` para executar o projeto
 
 <h2 id="related">🫂 Integração com Frontend</h2>
 Para realizar a integração com o Frontend, você pode clonar o projeto e rodar localmente.
+
 👉 [Link do repositório](https://github.com/MilenaRizzi/frontend-todo-list)
 
 <h2 id="related">📝 Licença</h2>
