@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.milenarizzi.todo.dto.TaskRequest;
 import com.milenarizzi.todo.dto.TaskResponse;
+import com.milenarizzi.todo.dto.TaskUpdateRequest;
 import com.milenarizzi.todo.model.Task;
 import com.milenarizzi.todo.service.TaskService;
 
@@ -31,7 +32,7 @@ public class TaskController {
   @Autowired
   private TaskService taskService;
 
-  @Autowired
+ @Autowired
   private ModelMapper mapper;
 
   @GetMapping
@@ -50,7 +51,7 @@ public class TaskController {
   }
 
   @PutMapping("{id}")
-  public ResponseEntity<TaskResponse> updateTask(@PathVariable Integer id, @RequestBody @Valid TaskRequest request) {
+  public ResponseEntity<TaskResponse> updateTask(@PathVariable Integer id, @RequestBody TaskUpdateRequest request) {
     var task = mapper.map(request, Task.class);
     task.setId(id);
     task = taskService.updateTask(task);
