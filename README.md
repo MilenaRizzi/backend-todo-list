@@ -36,7 +36,8 @@ Para realizar a integração com o Frontend, você pode clonar o projeto e rodar
 👉 [Link do repositório](https://github.com/MilenaRizzi/frontend-todo-list)
 
 <h2 id="related">📝 Licença</h2>
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/MilenaRizzi/backend-todo-list/blob/main/LICENSE) 
+
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/MilenaRizzi/frontend-todo-list) 
 
 ## Autora
 Milena Clara Ribeiro Rizzi
