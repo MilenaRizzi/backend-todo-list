@@ -7,8 +7,8 @@ Este é o backend de uma aplicação **To-Do list** desenvolvido em Java com o u
 - Spring Data JPA
 - Spring Validation
 - Lombok
-- Postgres
-
+- Postgres Driver" para conectar o aplicativo ao banco de dados PostgreSQL.
+  
 <h2 id="pre-requisites">💻 Requisitos</h2> 
 
 Para rodar esse projeto você precisa ter o Java instalado na sua máquina.
