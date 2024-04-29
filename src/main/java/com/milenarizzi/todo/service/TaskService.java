@@ -29,7 +29,7 @@ public class TaskService {
     // throw new RegistroNaoExistenteException();
     // }
     // return taskOpt.get();
-    return taskRepository.findById(id).orElseThrow(() -> new RecordNotFoundException());
+    return taskRepository.findById(id).orElseThrow(() -> new RecordNotFoundException("Task não encontrada com código informado"));
 
   }
 
@@ -42,7 +42,7 @@ public class TaskService {
   public void deleteTask(Integer id) {
     boolean exist = taskRepository.existsById(id);
     if (!exist) {
-      throw new RecordNotFoundException();
+      throw new RecordNotFoundException("Task nao encontrada com código informado para exclusao");
     }
     taskRepository.deleteById(id);
   }
