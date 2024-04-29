@@ -8,7 +8,7 @@ Este é o backend de uma aplicação **To-Do list** desenvolvido em Java com o u
 - Spring Validation
 - Lombok
 - Postgres
-- 
+
 <h2 id="pre-requisites">💻 Requisitos</h2> 
 
 Para rodar esse projeto você precisa ter o Java instalado na sua máquina.
