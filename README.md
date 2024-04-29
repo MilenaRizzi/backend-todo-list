@@ -28,7 +28,7 @@ $ Certifique-se de ter um servidor PostgreSQL em execução localmente ou em um 
 
 #Executar o projeto:
 $ Entre no arquivo da classe `TodoApllication` para executar o projeto
-```bash
+```
 
 <h2 id="related">🫂 Integração com Frontend</h2>
 Para realizar a integração com o Frontend, você pode clonar o projeto e rodar localmente.
