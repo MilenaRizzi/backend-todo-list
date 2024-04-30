@@ -1,5 +1,6 @@
 package com.milenarizzi.todo.controller;
 
+
 import java.net.URI;
 import java.util.List;
 
@@ -51,10 +52,19 @@ public class TaskController {
   }
 
   @PutMapping("{id}")
-  public ResponseEntity<TaskResponse> updateTask(@PathVariable Integer id, @RequestBody TaskUpdateRequest request) {
+  public ResponseEntity<TaskResponse> updateTaskChecked(@PathVariable Integer id, @RequestBody TaskUpdateRequest request) {
     var task = mapper.map(request, Task.class);
     task.setId(id);
-    task = taskService.updateTask(task);
+    task = taskService.updateTaskChecked(task);
+    var resp = mapper.map(task, TaskResponse.class);
+    return ResponseEntity.ok().body(resp);
+  }
+
+  @PutMapping("{id}/description")
+  public ResponseEntity<TaskResponse> updateTaskDescription(@PathVariable Integer id, @RequestBody TaskUpdateRequest request) {
+    var task = mapper.map(request, Task.class);
+    task.setId(id);
+    task = taskService.updateTaskDescription(task);
     var resp = mapper.map(task, TaskResponse.class);
     return ResponseEntity.ok().body(resp);
   }
