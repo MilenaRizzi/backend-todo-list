@@ -33,10 +33,16 @@ public class TaskService {
 
   }
 
-  public Task updateTask(Task datas){
-    var task = this.consult(datas.getId());
-    task.setCompleted(!task.isCompleted()); 
-    return taskRepository.save(task); 
+  public Task updateTaskChecked(Task data) {
+    var task = this.consult(data.getId());
+    task.setCompleted(!task.isCompleted());
+    return taskRepository.save(task);
+  }
+
+  public Task updateTaskDescription(Task data) {
+    var task = this.consult(data.getId());
+    task.setDescription(data.getDescription());
+    return taskRepository.save(task);
   }
 
   public void deleteTask(Integer id) {
